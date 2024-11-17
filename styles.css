@@ -13,6 +13,144 @@
     padding: 0;
     box-sizing: border-box;
 }
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.language-text {
+    display: none;
+}
+
+.language-flag {
+    width: 30px;
+    height: 20px;
+    border-radius: 2px;
+    object-fit: cover;
+}
+
+.language-button i {
+    display: none;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    top: 100%;
+    right: 0;
+    width: auto;
+    min-width: 40px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown button {
+    display: flex;
+    width: 100%;
+    padding: 4px;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.language-dropdown button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Añadir un pequeño espacio entre los botones del dropdown */
+.language-dropdown button + button {
+    border-top: 1px solid #eee;
+}
+
+
+/* En pantallas pequeñas, invertimos la visualización */
+@media (max-width: 768px) {
+    .language-text {
+        display: none;
+    }
+    
+    .language-flag {
+        display: inline;
+    }
+    
+    .language-button .fas {
+        display: none;
+    }
+}
+
+.language-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.language-button i {
+    display: none;
+    margin-left: 8px;
+}
+
+.language-dropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-dropdown.show {
+    display: block;
+}
+
+.language-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 8px 12px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.language-dropdown button:hover {
+    background-color: #f0f0f0;
+}
 
 body {
     font-family: 'Poppins', sans-serif;

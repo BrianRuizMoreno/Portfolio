@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portfolio</title>
+    <title data-translate="Title">Mi Portfolio</title>
     <link rel="icon" type="image/x-icon" href="Img/Icono.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
+    
+    <div id="language-switcher" class="language-switcher">
+        <button id="language-button" class="language-button">
+            <span id="current-language">
+                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg" alt="Español" class="language-flag" />
+            </span>
+        </button>
+        <div id="language-dropdown" class="language-dropdown">
+            <button data-lang="es">
+                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg" alt="Español" class="language-flag" /> 🇪🇸 Español
+            </button>
+            <button data-lang="en">
+                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg" alt="English" class="language-flag" /> 🇺🇸 English
+            </button>
+            <button data-lang="it">
+                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/it.svg" alt="Italiano" class="language-flag" /> 🇮🇹 Italiano
+            </button>
+            <button data-lang="pt">
+                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/pt.svg" alt="Portugues" class="language-flag" /> 🇵🇹 Português
+            </button>
+        </div>
+    </div>
     <header>
         <div class="container">
             <div class="header-content">
                 <img src="Img/Perfil.png" alt="Tu Foto" class="profile-pic">
                 <div class="header-text">
                     <h1>Brian Ruiz Moreno</h1>
-                    <p>Desarrollador Web Creativo - Data Analytics</p>
+                    <p data-translate="role"></p>
                     <nav class="social-icons">
                         <a href="https://www.linkedin.com/in/brian-ruiz-moreno-b370a71b9/" target="_blank" rel="noopener noreferrer">
                             <i class="fa fa-linkedin" id="linkedin"></i>
@@ -38,125 +60,125 @@
 
     <main>
         <section id="about" class="container">
-            <h2>Sobre mí</h2>
-            <p>Amplia experiencia y gran atención al detalle, con habilidades de organización en el análisis e interpretación de datos. Destaco en la identificación de tendencias y patrones para proporcionar información valiosa. Poseo habilidades en desarrollo web, lo que me permite integrar soluciones tecnológicas efectivas en el análisis de datos y la visualización de resultados. Además, tengo capacidad de liderazgo y conocimiento en coaching, lo que me permite guiar y motivar a otros en entornos dinámicos y desafiantes.</p>
+            <h2 data-translate="aboutTitle"></h2>
+            <p data-translate="aboutText"></p>
         </section>
 
         <section id="portfolio" class="container">
-            <h2>Mi Portfolio</h2>
+            <h2 data-translate="portfolioTitle"></h2>
             <div class="projects-grid">
                 <div class="project">
                     <img src="Img/Cattleya.png" alt="SALON DE EVENTOS">
-                    <h3>Sitio Web de Salón para Eventos</h3>
-                    <p>Sitio Web de un salón para eventos con galería de fotos, detalles de servicios y botones de contacto.</p>
+                    <h3 data-translate="project1Title"></h3>
+                    <p data-translate="project1Description"></p>
                     <div class="tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <button class="button" onclick="window.open('https://brianruizmoreno.github.io/Cattleya/', '_blank')">Ver Página</button>
+                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/Cattleya/', '_blank')"></button>
                 </div>
                 <div class="project">
                     <img src="Img/English Pro.png" alt="SERVICIOS DE CLASES DE INGLES">
-                    <h3>Sitio Web de Servicios de Clases de Inglés</h3>
-                    <p>Sitio web informativo sobre servicios de clases de inglés, presentación del instructor y botón directo para contacto por WhatsApp.</p>
+                    <h3 data-translate="project2Title"></h3>
+                    <p data-translate="project2Description"></p>
                     <div class="tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <button class="button" onclick="window.open('https://brianruizmoreno.github.io/English-Pro/', '_blank')">Ver Página</button>
+                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/English-Pro/', '_blank')"></button>
                 </div>
                 <div class="project">
                     <img src="Img/FlaRo.png" alt="TIENDA DE ROPA DEPORTIVA">
-                    <h3>Sitio Web de Tienda de Ropa Deportiva</h3>
-                    <p>Sitio web de tienda de ropa deportiva que presenta la marca, ofrece información sobre la empresa y permite contactarse fácilmente</p>
+                    <h3 data-translate="project3Title"></h3>
+                    <p data-translate="project3Description"></p>
                     <div class="tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <button class="button" onclick="window.open('https://brianruizmoreno.github.io/FlaRo/', '_blank')">Ver Página</button>
+                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/FlaRo/', '_blank')"></button>
                 </div>
                 <div class="project">
                     <img src="Img/Trivia.png" alt="TRIVIA">
-                    <h3>Sitio Web de Juego de Trivia</h3>
-                    <p>Sitio web de juego de trivia que ofrece preguntas interactivas y puntuaciones en tiempo real.</p>
+                    <h3 data-translate="project4Title"></h3>
+                    <p data-translate="project4Description"></p>
                     <div class="tags">
                         <span>HTML5</span>
                         <span>CSS3</span>
                         <span>JavaScript</span>
                     </div>
-                    <button class="button" onclick="window.open('https://brianruizmoreno.github.io/Trivia/', '_blank')">Ver Página</button>
+                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/Trivia/', '_blank')"></button>
                 </div>
             </div>
         </section>
 
         <section id="certificates" class="container">
-            <h2>Mis Certificados</h2>
-            <button id="toggle-certificates" class="btn btn-theme">Mostrar Certificados</button>
+            <h2 data-translate="certificatesTitle"></h2>
+            <button id="toggle-certificates" class="btn btn-theme" data-translate="showCertificates"></button>
             <div id="certificates-content" class="hidden">
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Figma.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/Figma.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>Taller de Figma dictado por Desafio Latam</h3>
-                        <p>En este taller, adquirí habilidades fundamentales para el uso de Figma en el diseño de interfaces de usuario (UI) en plataformas digitales. Aprendí a manejar las herramientas principales de la plataforma, incluyendo la creación de frames, la importación y edición de imágenes, y la auto maquetación básica. También incorporé estilos y aprendí a trabajar con elementos máster y variantes para crear diseños más eficientes y organizados. Además, exploré las herramientas de la comunidad de Figma, lo que me permitió mejorar mis procesos de aprendizaje y colaborar con otros diseñadores. Durante el taller, se abordaron temas clave como el diseño UX/UI y la creación de interacciones en prototipos.</p> <br>
+                        <h3 data-translate="certificate1Title"></h3>
+                        <p data-translate="certificate1Text"></p> <br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Introduccion ciencia de datos.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/Introduccion ciencia de datos.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>Curso de Data Science dictado por IE Business School</h3>
-                        <p>Este curso me ha permitido profundizar en el mundo del Big Data y la Ciencia de Datos, aprendiendo herramientas clave que usan los científicos de datos para analizar información y tomar decisiones más inteligentes. Ahora comprendo la importancia de la ciencia de datos en los negocios, las aplicaciones del Big Data para obtener ventajas competitivas, y cómo la calidad de los datos influye en los resultados.</p> <br>
+                        <h3 data-translate="certificate2Title"></h3>
+                        <p data-translate="certificate2Text"></p> <br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/AWS CPE.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/AWS CPE.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>AWS Cloud Practitioner Essentials</h3>
-                        <p>Adquirí conocimientos fundamentales sobre la computación en la nube y su impacto en los entornos empresariales. Me familiaricé con los servicios clave de AWS, como Amazon EC2, Amazon S3, y Amazon RDS, aprendiendo a identificar sus usos y beneficios en diferentes escenarios. Además, entendí el modelo de precios y las mejores prácticas de seguridad en la nube, lo que me permitió obtener una visión amplia sobre la gestión de recursos en AWS. Desarrollé habilidades en la toma de decisiones relacionadas con la arquitectura en la nube, mejorando mis competencias técnicas en el uso de soluciones escalables y eficientes.</p> <br>
+                        <h3 data-translate="certificate3Title"></h3>
+                        <p data-translate="certificate3Text"></p> <br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/CIITI.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/CIITI.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>XXII Congreso Internacional en Innovación Tecnológica Informática</h3>
-                        <p>Participé en el XXII Congreso Internacional en Innovación Tecnológica Informática, donde adquirí una comprensión profunda de las últimas tendencias en tecnologías emergentes, como la inteligencia artificial, el análisis de datos y la ciberseguridad. Durante el congreso, asistí a conferencias y talleres impartidos por expertos internacionales, lo que me permitió ampliar mis conocimientos sobre la innovación tecnológica y su aplicación en la industria. Esta experiencia me ayudó a fortalecer mis habilidades técnicas y a desarrollar una visión más estratégica sobre el impacto de la transformación digital en los entornos empresariales y sociales.</p> <br>
+                        <h3 data-translate="certificate4Title"></h3>
+                        <p data-translate="certificate4Text"></p><br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Coaching.png">Ver Certificado</button>
+                    <button class="buttonc" data-image="Img/Coaching.png" data-translate="viewCertificate"></button>
                     <div class="certificate-info">
-                        <h3>Diplomado en Coaching Personal y Profesional dictado por Edutin Academy Estados Unidos</h3>
-                        <p>Adquirí conocimientos sobre el desarrollo personal, la gestión de emociones, y habilidades de liderazgo. Aprendí a identificar fortalezas y áreas de mejora, aplicar técnicas de motivación y comunicación efectiva, y apoyar a otros en su proceso de crecimiento personal y profesional.</p> <br>
+                        <h3 data-translate="certificate5Title"></h3>
+                        <p data-translate="certificate5Text"></p><br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/HTML.png">Ver Certificado</button>
+                    <button class="buttonc" data-image="Img/HTML.png" data-translate="viewCertificate"></button>
                     <div class="certificate-info">
-                        <h3>Introducción al desarrollo web: HTML y CSS dictado por Google Activate</h3>
-                        <p>Aprendí los fundamentos del desarrollo web, enfocándome en la creación de estructuras de páginas web mediante HTML y el diseño y personalización de su apariencia a través de CSS. Obtuve habilidades prácticas para desarrollar sitios web estáticos y optimizar su presentación visual, asegurando una experiencia de usuario efectiva y adaptada a diferentes dispositivos.</p> <br>
+                        <h3 data-translate="certificate6Title"></h3>
+                        <p data-translate="certificate6Text"></p><br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Redes.png">Ver Certificado</button>                  
+                    <button class="buttonc" data-image="Img/Redes.png" data-translate="viewCertificate"></button>                  
                     <div class="certificate-info">
-                        <h3>Curso de Instalación de Redes dictado por INDA</h3>
-                        <p>Aprendí a diseñar, instalar y configurar redes locales. Adquirí habilidades en la gestión de conexiones, la configuración de dispositivos y la optimización del rendimiento de la red, asegurando una comunicación eficiente y segura en distintos entornos.</p> <br>
+                        <h3 data-translate="certificate7Title"></h3>
+                        <p data-translate="certificate7Text"></p><br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Marketing.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/Marketing.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>Fundamentos del Marketing Digital dictado por Google Activate</h3>
-                        <p>Adquirí conocimientos clave sobre estrategias digitales, incluyendo SEO, SEM, redes sociales, analítica web y publicidad online. Aprendí a crear y gestionar campañas de marketing digital, optimizar la presencia en línea de marcas, y analizar datos para mejorar el rendimiento y alcanzar objetivos de negocio de manera efectiva.</p> <br>
+                        <h3 data-translate="certificate8Title"></h3>
+                        <p data-translate="certificate8Text"></p> <br>
                     </div>
                 </div>
                 <div class="certificate">
-                    <button class="buttonc" data-image="Img/Yo puedo programar.png">Ver Certificado</button>          
+                    <button class="buttonc" data-image="Img/Yo puedo programar.png" data-translate="viewCertificate"></button>          
                     <div class="certificate-info">
-                        <h3>'Yo Puedo Programar' de Junior Academy</h3>
-                        <p>Adquirí conocimientos fundamentales en programación, incluyendo el manejo de lenguajes como HTML, CSS y JavaScript. Aprendí a desarrollar páginas web desde cero, aplicando principios de diseño y estructura, y fortalecí mis habilidades en lógica de programación. Además, adquirí competencias clave en resolución de problemas y pensamiento computacional, lo que me permitió desarrollar aplicaciones simples y proyectos funcionales, fomentando mi creatividad y capacidad técnica en el desarrollo de software.</p> <br>
+                        <h3 data-translate="certificate9Title"></h3>
+                        <p data-translate="certificate9Text"></p> <br>
                     </div>
                 </div>
             </div>
@@ -165,7 +187,7 @@
    
     <footer>
         <div class="container">
-            <p>&copy; <span id="current-year"></span> Brian Ruiz Moreno. Todos los derechos reservados.</p>
+            <p data-translate="footer">&copy; <span id="current-year"></span></p>
         </div>
     </footer>
 
@@ -220,9 +242,11 @@
                 </li>
             </ul>
         </div>
-        <span>Cargando...</span>
+        <span data-translate="loading">Cargando...</span>
     </div>
 
     <script src="script.js"></script>
+    <script src="translation.js"></script>
+
 </body>
 </html>

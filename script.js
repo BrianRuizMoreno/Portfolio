@@ -34,13 +34,19 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.backgroundPositionY = `-${scrolled * 0.1}px`;
     });
 
+    // Variables para el manejo de certificados
+    const toggleCertificatesBtn = document.getElementById('toggle-certificates');
+    const certificatesContent = document.getElementById('certificates-content');
+    let certificatesVisible = false;
+    let currentLanguage = 'es';
+
     // Manejo de imágenes de certificados en lightbox
     const certificateLinks = document.querySelectorAll('.certificate .buttonc');
     const imageLightbox = document.getElementById('image-lightbox');
     const imageLightboxContent = document.querySelector('#image-lightbox .lightbox-content');
     const imageContainer = document.getElementById('image-container');
     const imageClose = document.querySelector('#image-lightbox .close');
-    
+    const loader = document.getElementById('loader');
 
     // Función para cerrar el lightbox de imágenes
     function closeImageLightbox() {
@@ -73,6 +79,25 @@ document.addEventListener('DOMContentLoaded', () => {
         img.src = imageUrl;
     }
 
+    // Función para actualizar el texto del botón de certificados
+    function updateCertificateButtonText() {
+        if (certificatesVisible) {
+            toggleCertificatesBtn.textContent = currentLanguage === 'es' ? 'Ocultar Certificados' : 'Hide Certificates';
+        } else {
+            toggleCertificatesBtn.textContent = currentLanguage === 'es' ? 'Mostrar Certificados' : 'Show Certificates';
+        }
+    }
+
+    // Event listeners para certificados
+    if (toggleCertificatesBtn && certificatesContent) {
+        toggleCertificatesBtn.addEventListener('click', () => {
+            certificatesVisible = !certificatesVisible;
+            certificatesContent.style.display = certificatesVisible ? 'grid' : 'none';
+            updateCertificateButtonText();
+        });
+    }
+
+    // Event listeners para el lightbox
     certificateLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -81,52 +106,89 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Asegurarse de que el botón de cierre existe antes de agregar el evento
     if (imageClose) {
         imageClose.addEventListener('click', closeImageLightbox);
     }
 
-    // Cerrar lightbox de imágenes al hacer clic fuera del contenido
     imageLightbox.addEventListener('click', (e) => {
         if (e.target === imageLightbox) {
             closeImageLightbox();
         }
     });
 
-    // Evitar que los clics dentro del contenido del lightbox lo cierren
     if (imageLightboxContent) {
         imageLightboxContent.addEventListener('click', (e) => {
             e.stopPropagation();
         });
     }
 
-    // Cerrar lightbox de imágenes al presionar la tecla Escape
+    // Cerrar lightbox con tecla Escape
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && imageLightbox.style.display === 'flex') {
             closeImageLightbox();
         }
     });
 
-    // Manejo de la sección de certificados
-    const toggleCertificatesBtn = document.getElementById('toggle-certificates');
-    const certificatesContent = document.getElementById('certificates-content');
-    let certificatesVisible = false;
+    // Sistema de traducción
+    const languageButton = document.getElementById('language-button');
+    const languageDropdown = document.getElementById('language-dropdown');
+    const languageOptions = document.querySelectorAll('#language-dropdown button');
 
-    if (toggleCertificatesBtn && certificatesContent) {
-        toggleCertificatesBtn.addEventListener('click', () => {
-            certificatesVisible = !certificatesVisible;
-            if (certificatesVisible) {
-                certificatesContent.style.display = 'grid';
-                toggleCertificatesBtn.textContent = 'Ocultar Certificados';
-                initializeAnimations();
-            } else {
-                certificatesContent.style.display = 'none';
-                toggleCertificatesBtn.textContent = 'Mostrar Certificados';
+    // Cargar idioma guardado o usar español por defecto
+    currentLanguage = localStorage.getItem('preferredLanguage') || 'es';
+    changeLanguage(currentLanguage);
+
+    // Eventos del selector de idioma
+    languageButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('show');
+    });
+
+    // Cerrar menú al hacer clic fuera
+    document.addEventListener('click', () => {
+        languageDropdown.classList.remove('show');
+    });
+
+    // Manejar selección de idioma
+    languageOptions.forEach(option => {
+        option.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const lang = option.getAttribute('data-lang');
+            currentLanguage = lang;
+            changeLanguage(lang);
+            languageDropdown.classList.remove('show');
+            updateCertificateButtonText();
+        });
+    });
+
+    // Función para cambiar el idioma
+    function changeLanguage(lang) {
+        const elements = document.querySelectorAll('[data-translate]');
+        
+        elements.forEach(element => {
+            const key = element.getAttribute('data-translate');
+            if (translations[lang] && translations[lang][key]) {
+                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    element.placeholder = translations[lang][key];
+                } else {
+                    element.textContent = translations[lang][key];
+                }
             }
         });
+
+        // Actualizar botón de idioma
+        const currentLanguage = document.getElementById('current-language');
+        const flagUrl = lang === 'es' 
+            ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg'
+            : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg';
+        
+        currentLanguage.innerHTML = `<img src="${flagUrl}" alt="${lang === 'es' ? 'Español' : 'English'}" class="language-flag" />`;
+
+        // Guardar preferencia
+        localStorage.setItem('preferredLanguage', lang);
     }
 
-    // Inicialización de la animación para los nuevos elementos
+    // Inicialización de animaciones para nuevos elementos
     function initializeAnimations() {
         const newAnimatedElements = document.querySelectorAll('.certificate');
         newAnimatedElements.forEach(el => {
