@@ -178,15 +178,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Actualizar botón de idioma
         const currentLanguage = document.getElementById('current-language');
-        const flagUrl = lang === 'es' 
-            ? 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg'
-            : 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg';
+        let flagUrl;
+        let altText;
         
-        currentLanguage.innerHTML = `<img src="${flagUrl}" alt="${lang === 'es' ? 'Español' : 'English'}" class="language-flag" />`;
-
+        switch (lang) {
+            case 'es':
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg';
+                altText = 'Español';
+                break;
+            case 'en':
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg';
+                altText = 'English';
+                break;
+            case 'it':
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/it.svg';
+                altText = 'Italiano';
+                break;
+            case 'pt':
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/pt.svg';
+                altText = 'Português';
+                break;
+            case 'fr':
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/fr.svg';
+                altText = 'Français';
+                break;
+            default:
+                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg';
+                altText = 'Español';
+        }
+        
+        currentLanguage.innerHTML = `<img src="${flagUrl}" alt="${altText}" class="language-flag" />`;
+        
         // Guardar preferencia
         localStorage.setItem('preferredLanguage', lang);
-    }
 
     // Inicialización de animaciones para nuevos elementos
     function initializeAnimations() {
@@ -195,4 +219,5 @@ document.addEventListener('DOMContentLoaded', () => {
             el.classList.add('fade-in-up');
         });
     }
-});
+}
+})
