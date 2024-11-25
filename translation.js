@@ -1,6 +1,5 @@
 const translations = {
   es: {
-    // Traducciones existentes
     aboutTitle: "Sobre mí",
     aboutText: "Amplia experiencia y gran atención al detalle, con habilidades de organización en el análisis e interpretación de datos. Destaco en la identificación de tendencias y patrones para proporcionar información valiosa. Poseo habilidades en desarrollo web, lo que me permite integrar soluciones tecnológicas efectivas en el análisis de datos y la visualización de resultados. Además, tengo capacidad de liderazgo y conocimiento en coaching, lo que me permite guiar y motivar a otros en entornos dinámicos y desafiantes.",
     role: "Desarrollador Web Creativo - Data Analytics",
@@ -15,6 +14,8 @@ const translations = {
     verPage: "Ver Página",
 
     // Proyectos
+    project0Title: "Bartender En Casa",
+    project0Description: "Plataforma web que permite a los usuarios descubrir recetas de cócteles según los ingredientes que tengan disponibles.",
     project1Title: "Sitio Web de Salón para Eventos",
     project1Description: "Sitio Web de un salón para eventos con galería de fotos, detalles de servicios y botones de contacto.",
     project2Title: "Sitio Web de Servicios de Clases de Inglés",
@@ -45,7 +46,6 @@ const translations = {
     certificate9Text: "Adquirí conocimientos fundamentales en programación, incluyendo el manejo de lenguajes como HTML, CSS y JavaScript. Aprendí a desarrollar páginas web desde cero, aplicando principios de diseño y estructura, y fortalecí mis habilidades en lógica de programación. Además, adquirí competencias clave en resolución de problemas y pensamiento computacional, lo que me permitió desarrollar aplicaciones simples y proyectos funcionales, fomentando mi creatividad y capacidad técnica en el desarrollo de software."
   },
   en: {
-    // Existing translations
     aboutTitle: "About Me",
     aboutText: "Extensive experience and great attention to detail, with organizational skills in data analysis and interpretation. I excel at identifying trends and patterns to provide valuable insights. I possess web development skills, which allows me to integrate effective technological solutions in data analysis and results visualization. Additionally, I have leadership capabilities and coaching knowledge, enabling me to guide and motivate others in dynamic and challenging environments.",
     role: "Creative Web Developer - Data Analytics",
@@ -60,6 +60,8 @@ const translations = {
     verPage: "View Page",
 
     // Projects
+    project0Title: "Bartender at Home",
+    project0Description: "Web platform that allows users to discover cocktail recipes based on the ingredients they have available.",
     project1Title: "Event Venue Website",
     project1Description: "Website for an event venue featuring photo gallery, service details, and contact buttons.",
     project2Title: "English Classes Services Website",
@@ -90,7 +92,6 @@ const translations = {
     certificate9Text: "I acquired fundamental knowledge in programming, including the use of languages such as HTML, CSS, and JavaScript. I learned to develop web pages from scratch, applying design and structure principles, and strengthened my skills in programming logic. Additionally, I acquired key competencies in problem-solving and computational thinking, which allowed me to develop simple applications and functional projects, fostering my creativity and technical ability in software development."
   },
   it:{
-      // Traducciones existentes
       aboutTitle: "Chi sono",
       aboutText: "Ampia esperienza e grande attenzione ai dettagli, con abilità organizzative nell'analisi e interpretazione dei dati. Eccello nell'identificazione di tendenze e schemi per fornire informazioni preziose. Possiedo competenze nello sviluppo web, che mi permettono di integrare soluzioni tecnologiche efficaci nell'analisi dei dati e nella visualizzazione dei risultati. Inoltre, ho capacità di leadership e conoscenze di coaching, che mi consentono di guidare e motivare gli altri in ambienti dinamici e stimolanti.",
       role: "Sviluppatore Web Creativo - Analisi Dati",
@@ -105,6 +106,8 @@ const translations = {
       verPage: "Visualizza Pagina",
   
       // Progetti
+      project0Title: "Barman a Casa",
+      project0Description: "Piattaforma web che consente agli utenti di scoprire ricette di cocktail in base agli ingredienti disponibili",
       project1Title: "Sito Web per Sala Eventi",
       project1Description: "Sito web di una sala per eventi con galleria fotografica, dettagli sui servizi e pulsanti di contatto.",
       project2Title: "Sito Web per Servizi di Lezioni di Inglese",
@@ -149,6 +152,8 @@ const translations = {
     footer: "Brian Ruiz Moreno. Todos os direitos reservados.",
     verPage: "Ver Página",
   
+    project0Title: "Barman em Casa",
+    project0Description: "Plataforma web que permite aos usuários descobrir receitas de coquetéis com base nos ingredientes disponíveis.",
     project1Title: "Site para Salão de Eventos",
     project1Description: "Site para salão de eventos com galeria de fotos, detalhes de serviços e botões de contato.",
     project2Title: "Site de Aulas de Inglês",
@@ -176,5 +181,49 @@ const translations = {
     certificate8Text: "Adquiri conhecimentos fundamentais sobre estratégias digitais, incluindo SEO, SEM, redes sociais, análise de dados e publicidade online. Aprendi a criar e gerenciar campanhas de marketing digital, otimizar a presença online de marcas e analisar dados para melhorar o desempenho e alcançar objetivos de negócios de forma eficaz.",
     certificate9Title: "Programa 'Eu Posso Programar' da Junior Academy",
     certificate9Text: "Adquiri conhecimentos fundamentais em programação, incluindo o uso de linguagens como HTML, CSS e JavaScript. Aprendi a desenvolver páginas web do zero, aplicando princípios de design e estrutura, e fortaleci minhas habilidades em lógica de programação. Também adquiri competências-chave em resolução de problemas e pensamento computacional, permitindo-me desenvolver aplicações simples e projetos funcionais, estimulando minha criatividade e capacidade técnica no desenvolvimento de software."
-  }  
+  },
+  fr:{
+    aboutTitle: "À propos de moi",
+    aboutText: "Expérience vaste et attention aux détails, avec des compétences organisationnelles en analyse et interprétation de données. Je me distingue par ma capacité à identifier des tendances et des motifs pour offrir des insights précieux. Je possède des compétences en développement web, ce qui me permet d'intégrer des solutions technologiques efficaces dans l'analyse de données et la visualisation des résultats. De plus, j'ai des compétences en leadership et une connaissance du coaching, ce qui me permet de guider et de motiver les autres dans des environnements dynamiques et stimulants.",
+    role: "Développeur Web Créatif - Data Analytics",
+    portfolioTitle: "Mon Portefolio",
+    showCertificates: "Montrer Certificats",
+    hideCertificates: "Cacher Certificats",
+    certificatesTitle: "Mes Certificats",
+    viewProject: "Voir Page",
+    viewCertificate: "Voir Certificat",
+    loading: "Chargement...",
+    footer: "Brian Ruiz Moreno. Tous droits réservés.",
+    verPage: "Voir Page",
+
+    project0Title: "Barman à Domicile",
+    project0Description: "Plateforme web qui permet aux utilisateurs de découvrir des recettes de cocktails en fonction des ingrédients disponibles.",
+    project1Title: "Site d'événement",
+    project1Description: "Site d'événements avec galerie de photos, détails de services et boutons de contact.",
+    project2Title: "Site d'anglais",
+    project2Description: "Site d'informations sur les services d'anglais, présent ation de l'enseignant et bouton de contact direct via WhatsApp.",
+    project3Title: "Site de magasin de vêtements de sport",
+    project3Description: "Site de magasin de vêtements de sport qui présente l'entreprise, offre des informations sur l'entreprise et permet le contact facile.",
+    project4Title: "Site de jeu de trivia",
+    project4Description: "Site de jeu de trivia qui offre des questions interractives et des scores en temps réel.",
+
+    certificate1Title: "Atelier Figma animé par Desafio Latam",
+    certificate1Text: "Lors de cet atelier, j'ai acquis des compétences fondamentales pour l'utilisation de Figma dans la conception d'interfaces utilisateur (UI) sur des plateformes numériques. J'ai appris à utiliser les principaux outils de la plateforme, y compris la création de cadres, l'importation et l'édition d'images, et la mise en page automatique de base. J'ai également incorporé des styles et travaillé avec des éléments maîtres et des variantes pour créer des conceptions plus efficaces et organisées. J'ai exploré les outils de la communauté Figma, améliorant mes processus d'apprentissage et de collaboration avec d'autres designers. Au cours de l'atelier, des thèmes tels que le design UX/UI et la création d'interactions dans des prototypes ont été abordés.",
+    certificate2Title: "Cours de Data Science animé par l'IE Business School",
+    certificate2Text: "Ce cours m'a permis de plonger dans le monde du Big Data et de la science des données, en apprenant les outils essentiels utilisés par les data scientists pour analyser des informations et prendre des décisions plus intelligentes. Je comprends maintenant l'importance de la science des données dans les affaires, les applications du Big Data pour obtenir des avantages concurrentiels et comment la qualité des données impacte les résultats.",
+    certificate3Title: "AWS Cloud Practitioner Essentials",
+    certificate3Text: "J'ai acquis des connaissances fondamentales sur l'informatique en nuage et son impact sur les environnements d'entreprise. Je me suis familiarisé avec les services clés de l'AWS, tels qu'Amazon EC2, Amazon S3 et Amazon RDS, apprenant à identifier leurs utilisations et avantages dans différents scénarios. De plus, j'ai compris le modèle de tarification et les meilleures pratiques de sécurité dans le cloud, obtenant une vue d'ensemble sur la gestion des ressources dans l'AWS. J'ai développé des compétences pour prendre des décisions liées à l'architecture cloud, améliorant mes compétences techniques dans l'utilisation de solutions évolutives et efficaces.",
+    certificate4Title: "XXII Congrès International sur l'Innovation Technologique Informatique",
+    certificate4Text: "J'ai participé au XXII Congrès International sur l'Innovation Technologique Informatique, où j'ai acquis une compréhension approfondie des dernières tendances en technologies émergentes, telles que l'intelligence artificielle, l'analyse de données et la cybersécurité. Au cours du congrès, j'ai assisté à des conférences et des ateliers animés par des experts internationaux, élargissant mes connaissances sur l'innovation technologique et son application dans l'industrie. Cette expérience a renforcé mes compétences techniques et m'a aidé à développer une vision stratégique sur l'impact de la transformation numérique dans les environnements d'entreprise et sociaux.",
+    certificate5Title: "Diplôme en Coaching Personnel et Professionnel de l'Edutin Academy, États-Unis",
+    certificate5Text: "J'ai acquis des connaissances sur le développement personnel, la gestion des émotions et les compétences en leadership. J'ai appris à identifier les forces et les domaines d'amélioration, à appliquer des techniques de motivation et de communication efficace et à soutenir les autres dans leur processus de croissance personnelle et professionnelle.",
+    certificate6Title: "Introduction au Développement Web : HTML et CSS animé par Google Activate",
+    certificate6Text: "J'ai appris les fondamentaux du développement web, en me concentrant sur la création de structures de pages web avec HTML et sur la conception et la personnalisation de leur apparence grâce au CSS. J'ai acquis des compétences pratiques pour développer des sites statiques et optimiser leur présentation visuelle, garantissant une expérience utilisateur efficace et adaptée à différents appareils.",
+    certificate7Title: "Cours d'Installation de Réseaux animé par l'INDA",
+    certificate7Text: "J'ai appris à concevoir, installer et configurer des réseaux locaux. J'ai acquis des compétences dans la gestion des connexions, la configuration des appareils et l'optimisation des performances du réseau, garantissant une communication efficace et sécurisée dans différents environnements.",
+    certificate8Title: "Fondamentaux du Marketing Digital animé par Google Activate",
+    certificate8Text: "J'ai acquis des connaissances fondamentales sur les stratégies numériques, y compris le SEO, le SEM, les réseaux sociaux, l'analyse de données et la publicité en ligne. J'ai appris à créer et à gérer des campagnes de marketing digital, à optimiser la présence en ligne des marques et à analyser des données pour améliorer les performances et atteindre efficacement les objectifs commerciaux.",
+    certificate9Title: "Programme 'Je Peux Programmer' de la Junior Academy",
+    certificate9Text: "J'ai acquis des connaissances fondamentales en programmation, y compris l'utilisation de langages tels que HTML, CSS et JavaScript. J'ai appris à développer des pages web à partir de zéro, en appliquant des principes de conception et de structure, et j'ai renforcé mes compétences en logique de programmation. J'ai également acquis des compétences clés en résolution de problèmes et en pensée computationnelle, me permettant de développer des applications simples et des projets fonctionnels, stimulant ma créativité et ma capacité technique dans le développement de logiciels."
+  }
 };
