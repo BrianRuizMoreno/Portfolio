@@ -1,223 +1,297 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Actualizar el año en el footer
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+// Navigation functionality
+document.addEventListener("DOMContentLoaded", () => {
+  const navToggle = document.getElementById("nav-toggle")
+  const navMenu = document.getElementById("nav-menu")
+  const navLinks = document.querySelectorAll(".nav-link")
+  const navbar = document.getElementById("navbar")
 
-    // Animación de entrada para los elementos
-    const animatedElements = document.querySelectorAll('.project, #about, #portfolio h2');
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1 });
+  // Mobile menu toggle
+  navToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active")
+    navToggle.classList.toggle("active")
+  })
 
-    animatedElements.forEach(el => observer.observe(el));
+  // Close mobile menu when clicking on a link
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      navMenu.classList.remove("active")
+      navToggle.classList.remove("active")
+    })
+  })
 
-    // Efecto de brillo en los botones sociales
-    const socialIcons = document.querySelectorAll('.social-icon');
-    socialIcons.forEach(icon => {
-        icon.addEventListener('mousemove', (e) => {
-            const { left, top, width, height } = icon.getBoundingClientRect();
-            const x = (e.clientX - left) / width;
-            const y = (e.clientY - top) / height;
-            
-            icon.style.setProperty('--x', `${x * 100}%`);
-            icon.style.setProperty('--y', `${y * 100}%`);
-        });
-    });
-
-    // Efecto de parallax suave en el scroll
-    window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        document.body.style.backgroundPositionY = `-${scrolled * 0.1}px`;
-    });
-
-    // Variables para el manejo de certificados
-    const toggleCertificatesBtn = document.getElementById('toggle-certificates');
-    const certificatesContent = document.getElementById('certificates-content');
-    let certificatesVisible = false;
-    let currentLanguage = 'es';
-
-    // Manejo de imágenes de certificados en lightbox
-    const certificateLinks = document.querySelectorAll('.certificate .buttonc');
-    const imageLightbox = document.getElementById('image-lightbox');
-    const imageLightboxContent = document.querySelector('#image-lightbox .lightbox-content');
-    const imageContainer = document.getElementById('image-container');
-    const imageClose = document.querySelector('#image-lightbox .close');
-    const loader = document.getElementById('loader');
-
-    // Función para cerrar el lightbox de imágenes
-    function closeImageLightbox() {
-        imageLightbox.style.display = 'none';
-        imageContainer.style.backgroundImage = '';
-        document.body.style.overflow = 'auto';
+  // Navbar scroll effect
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 50) {
+      navbar.classList.add("scrolled")
+    } else {
+      navbar.classList.remove("scrolled")
     }
+  })
 
-    // Función para abrir el lightbox de imágenes
-    function openImageLightbox(imageUrl) {
-        if (loader) {
-            loader.style.display = 'block';
+  // Active navigation link highlighting
+  function updateActiveNavLink() {
+    const sections = document.querySelectorAll("section[id]")
+    const scrollPosition = window.scrollY + 100
+
+    sections.forEach((section) => {
+      const sectionTop = section.offsetTop
+      const sectionHeight = section.offsetHeight
+      const sectionId = section.getAttribute("id")
+      const navLink = document.querySelector(`.nav-link[href="#${sectionId}"]`)
+
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        navLinks.forEach((link) => link.classList.remove("active"))
+        if (navLink) {
+          navLink.classList.add("active")
         }
-        
-        const img = new Image();
-        img.onload = function() {
-            imageContainer.style.backgroundImage = `url('${imageUrl}')`;
-            imageLightbox.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            if (loader) {
-                loader.style.display = 'none';
-            }
-        };
-        img.onerror = function() {
-            console.error('Error al cargar la imagen');
-            if (loader) {
-                loader.style.display = 'none';
-            }
-        };
-        img.src = imageUrl;
+      }
+    })
+  }
+
+  window.addEventListener("scroll", updateActiveNavLink)
+
+  // Smooth scrolling for navigation links
+  navLinks.forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault()
+      const targetId = this.getAttribute("href").substring(1)
+      const targetSection = document.getElementById(targetId)
+
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop - 70 // Account for fixed navbar
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        })
+      }
+    })
+  })
+
+  // Intersection Observer for animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px",
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("fade-in-up")
+      }
+    })
+  }, observerOptions)
+
+  // Observe elements for animation
+  const animatedElements = document.querySelectorAll(
+    ".skill-category, .project-card, .certificate-card, .about-paragraph",
+  )
+  animatedElements.forEach((el) => observer.observe(el))
+
+  // Typing effect for hero subtitle
+  function typeWriter(element, text, speed = 100) {
+    let i = 0
+    element.innerHTML = ""
+
+    function type() {
+      if (i < text.length) {
+        element.innerHTML += text.charAt(i)
+        i++
+        setTimeout(type, speed)
+      }
     }
 
-    // Función para actualizar el texto del botón de certificados
-    function updateCertificateButtonText() {
-        if (certificatesVisible) {
-            toggleCertificatesBtn.textContent = currentLanguage === 'es' ? 'Ocultar Certificados' : 'Hide Certificates';
-        } else {
-            toggleCertificatesBtn.textContent = currentLanguage === 'es' ? 'Mostrar Certificados' : 'Show Certificates';
-        }
+    type()
+  }
+
+  // Initialize typing effect
+  const heroSpecialization = document.querySelector(".hero-specialization")
+  if (heroSpecialization) {
+    const originalText = heroSpecialization.textContent
+    setTimeout(() => {
+      typeWriter(heroSpecialization, originalText, 80)
+    }, 1000)
+  }
+
+  // Parallax effect for hero section
+  window.addEventListener("scroll", () => {
+    const scrolled = window.pageYOffset
+    const hero = document.querySelector(".hero")
+    if (hero) {
+      const rate = scrolled * -0.5
+      hero.style.transform = `translateY(${rate}px)`
+    }
+  })
+
+  // Counter animation for certificates
+  function animateCounter(element, target, duration = 2000) {
+    let start = 0
+    const increment = target / (duration / 16)
+
+    function updateCounter() {
+      start += increment
+      if (start < target) {
+        element.textContent = Math.floor(start)
+        requestAnimationFrame(updateCounter)
+      } else {
+        element.textContent = target
+      }
     }
 
-    // Event listeners para certificados
-    if (toggleCertificatesBtn && certificatesContent) {
-        toggleCertificatesBtn.addEventListener('click', () => {
-            certificatesVisible = !certificatesVisible;
-            certificatesContent.style.display = certificatesVisible ? 'grid' : 'none';
-            updateCertificateButtonText();
-        });
+    updateCounter()
+  }
+
+  // Initialize counters when certificates section is visible
+  const certificatesSection = document.getElementById("certificaciones")
+  if (certificatesSection) {
+    const certificatesObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll(".certificate-hours")
+            counters.forEach((counter) => {
+              const text = counter.textContent
+              const number = Number.parseInt(text.match(/\d+/))
+              if (number) {
+                animateCounter(counter, number)
+              }
+            })
+            certificatesObserver.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.5 },
+    )
+
+    certificatesObserver.observe(certificatesSection)
+  }
+
+  // Project card hover effects
+  const projectCards = document.querySelectorAll(".project-card")
+  projectCards.forEach((card) => {
+    card.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-10px) scale(1.02)"
+    })
+
+    card.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)"
+    })
+  })
+
+  // Skill tag hover effects
+  const skillTags = document.querySelectorAll(".skill-tag")
+  skillTags.forEach((tag) => {
+    tag.addEventListener("mouseenter", function () {
+      this.style.transform = "scale(1.05)"
+      this.style.boxShadow = "0 5px 15px rgba(102, 126, 234, 0.4)"
+    })
+
+    tag.addEventListener("mouseleave", function () {
+      this.style.transform = "scale(1)"
+      this.style.boxShadow = "none"
+    })
+  })
+
+  // Social links tracking
+  const socialLinks = document.querySelectorAll(".social-link")
+  socialLinks.forEach((link) => {
+    link.addEventListener("click", function () {
+      const platform = this.href.includes("linkedin")
+        ? "LinkedIn"
+        : this.href.includes("instagram")
+          ? "Instagram"
+          : this.href.includes("facebook")
+            ? "Facebook"
+            : this.href.includes("wa.me")
+              ? "WhatsApp"
+              : "Unknown"
+
+      console.log(`Clicked on ${platform} link`)
+    })
+  })
+
+  // Contact button interactions
+  const contactButtons = document.querySelectorAll(".contact-buttons .btn")
+  contactButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      this.style.transform = "scale(0.95)"
+      setTimeout(() => {
+        this.style.transform = "scale(1)"
+      }, 150)
+    })
+  })
+
+  // Certificate card click effects
+  const certificateCards = document.querySelectorAll(".certificate-card")
+  certificateCards.forEach((card) => {
+    card.addEventListener("click", function () {
+      this.style.transform = "scale(1.02)"
+      setTimeout(() => {
+        this.style.transform = "scale(1)"
+      }, 200)
+    })
+  })
+
+  // Loading animation for page
+  window.addEventListener("load", () => {
+    document.body.style.opacity = "0"
+    document.body.style.transition = "opacity 0.5s ease-in-out"
+
+    setTimeout(() => {
+      document.body.style.opacity = "1"
+    }, 100)
+  })
+
+  // Scroll to top functionality
+  const scrollToTopBtn = document.createElement("button")
+  scrollToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>'
+  scrollToTopBtn.className = "scroll-to-top"
+  scrollToTopBtn.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea, #764ba2);
+        color: white;
+        border: none;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 1000;
+        box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    `
+
+  document.body.appendChild(scrollToTopBtn)
+
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 500) {
+      scrollToTopBtn.style.opacity = "1"
+      scrollToTopBtn.style.visibility = "visible"
+    } else {
+      scrollToTopBtn.style.opacity = "0"
+      scrollToTopBtn.style.visibility = "hidden"
     }
+  })
 
-    // Event listeners para el lightbox
-    certificateLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const imageUrl = link.getAttribute('data-image');
-            openImageLightbox(imageUrl);
-        });
-    });
+  scrollToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  })
 
-    if (imageClose) {
-        imageClose.addEventListener('click', closeImageLightbox);
-    }
+  scrollToTopBtn.addEventListener("mouseenter", function () {
+    this.style.transform = "translateY(-3px) scale(1.1)"
+    this.style.boxShadow = "0 8px 25px rgba(102, 126, 234, 0.6)"
+  })
 
-    imageLightbox.addEventListener('click', (e) => {
-        if (e.target === imageLightbox) {
-            closeImageLightbox();
-        }
-    });
+  scrollToTopBtn.addEventListener("mouseleave", function () {
+    this.style.transform = "translateY(0) scale(1)"
+    this.style.boxShadow = "0 5px 15px rgba(102, 126, 234, 0.4)"
+  })
 
-    if (imageLightboxContent) {
-        imageLightboxContent.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
-    }
-
-    // Cerrar lightbox con tecla Escape
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && imageLightbox.style.display === 'flex') {
-            closeImageLightbox();
-        }
-    });
-
-    // Sistema de traducción
-    const languageButton = document.getElementById('language-button');
-    const languageDropdown = document.getElementById('language-dropdown');
-    const languageOptions = document.querySelectorAll('#language-dropdown button');
-
-    // Cargar idioma guardado o usar español por defecto
-    currentLanguage = localStorage.getItem('preferredLanguage') || 'es';
-    changeLanguage(currentLanguage);
-
-    // Eventos del selector de idioma
-    languageButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        languageDropdown.classList.toggle('show');
-    });
-
-    // Cerrar menú al hacer clic fuera
-    document.addEventListener('click', () => {
-        languageDropdown.classList.remove('show');
-    });
-
-    // Manejar selección de idioma
-    languageOptions.forEach(option => {
-        option.addEventListener('click', (e) => {
-            e.stopPropagation();
-            const lang = option.getAttribute('data-lang');
-            currentLanguage = lang;
-            changeLanguage(lang);
-            languageDropdown.classList.remove('show');
-            updateCertificateButtonText();
-        });
-    });
-
-    // Función para cambiar el idioma
-    function changeLanguage(lang) {
-        const elements = document.querySelectorAll('[data-translate]');
-        
-        elements.forEach(element => {
-            const key = element.getAttribute('data-translate');
-            if (translations[lang] && translations[lang][key]) {
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    element.placeholder = translations[lang][key];
-                } else {
-                    element.textContent = translations[lang][key];
-                }
-            }
-        });
-
-        // Actualizar botón de idioma
-        const currentLanguage = document.getElementById('current-language');
-        let flagUrl;
-        let altText;
-        
-        switch (lang) {
-            case 'es':
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg';
-                altText = 'Español';
-                break;
-            case 'en':
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg';
-                altText = 'English';
-                break;
-            case 'it':
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/it.svg';
-                altText = 'Italiano';
-                break;
-            case 'pt':
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/pt.svg';
-                altText = 'Português';
-                break;
-            case 'fr':
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/fr.svg';
-                altText = 'Français';
-                break;
-            default:
-                flagUrl = 'https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg';
-                altText = 'Español';
-        }
-        
-        currentLanguage.innerHTML = `<img src="${flagUrl}" alt="${altText}" class="language-flag" />`;
-        
-        // Guardar preferencia
-        localStorage.setItem('preferredLanguage', lang);
-
-    // Inicialización de animaciones para nuevos elementos
-    function initializeAnimations() {
-        const newAnimatedElements = document.querySelectorAll('.certificate');
-        newAnimatedElements.forEach(el => {
-            el.classList.add('fade-in-up');
-        });
-    }
-}
+  // Initialize all animations and effects
+  console.log("Portfolio loaded successfully!")
 })
