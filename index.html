@@ -3,264 +3,559 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-translate="Title">Mi Portfolio</title>
+    <title>Brian Ruiz Moreno - Desarrollador Frontend & Especialista en Automatizaciones</title>
     <link rel="icon" type="image/x-icon" href="Img/Icono.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    
-    <div id="language-switcher" class="language-switcher">
-        <button id="language-button" class="language-button">
-            <span id="current-language">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg" alt="Español" class="language-flag" />
-            </span>
-        </button>
-        <div id="language-dropdown" class="language-dropdown">
-            <button data-lang="es">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/es.svg" alt="Español" class="language-flag" /> 🇪🇸 Español
-            </button>
-            <button data-lang="en">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/us.svg" alt="English" class="language-flag" /> 🇺🇸 English
-            </button>
-            <button data-lang="it">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/it.svg" alt="Italiano" class="language-flag" /> 🇮🇹 Italiano
-            </button>
-            <button data-lang="pt">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/pt.svg" alt="Portugues" class="language-flag" /> 🇵🇹 Português
-            </button>
-            <button data-lang="fr">
-                <img src="https://raw.githubusercontent.com/lipis/flag-icons/main/flags/4x3/fr.svg" alt="Français" class="language-flag" /> 🇫🇷 Français
-            </button>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-text">Brian Ruiz Moreno</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link">Inicio</a>
+                <a href="#sobre-mi" class="nav-link">Sobre Mí</a>
+                <a href="#habilidades" class="nav-link">Habilidades</a>
+                <a href="#proyectos" class="nav-link">Proyectos</a>
+                <a href="#certificaciones" class="nav-link">Certificaciones</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-    </div>
-    <header>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                        <div class="profile-circle">
+                            <img src="Img/Perfil.png" alt="Brian Ruiz Moreno" class="profile-img">
+                        </div>
+                        <div class="automation-badge">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="name-gradient">Brian Ruiz Moreno</span>
+                    </h1>
+                    <h2 class="hero-subtitle">Analista Funcional de Sistemas Informáticos</h2>
+                    <h3 class="hero-specialization">Especialista en Automatizaciones con n8n</h3>
+                    <p class="hero-description">
+                        Analizo, diseño y optimizo sistemas informáticos, especializado en automatizaciones con n8n e integración de soluciones de inteligencia artificial para mejorar procesos empresariales.
+                    </p>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#proyectos" class="btn btn-primary">
+                        <i class="fas fa-code"></i>
+                        Ver Proyectos
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contactar
+                    </a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/brian-ruiz-moreno-b370a71b9/" target="_blank" class="social-link linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/brian.ruizmoreno/" target="_blank" class="social-link instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/brian.ruizmoreno/" target="_blank" class="social-link facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/+543417221914" target="_blank" class="social-link whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="scroll-indicator">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre-mi" class="about">
         <div class="container">
-            <div class="header-content">
-                <img src="Img/Perfil.png" alt="Tu Foto" class="profile-pic">
-                <div class="header-text">
-                    <h1>Brian Ruiz Moreno</h1>
-                    <p data-translate="role"></p>
-                    <nav class="social-icons">
-                        <a href="https://www.linkedin.com/in/brian-ruiz-moreno-b370a71b9/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-linkedin" id="linkedin"></i>
-                        </a>
-                        <a href="https://www.instagram.com/brian.ruizmoreno/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-instagram" id="instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/brian.ruizmoreno/" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-facebook" id="facebook"></i>
-                        </a>
-                        <a href="https://wa.me/+543417221914" target="_blank" rel="noopener noreferrer">
-                            <i class="fa fa-whatsapp" id="whatsapp"></i>
-                        </a>
-                    </nav>
+            <div class="section-header">
+                <h2 class="section-title">Sobre Mí</h2>
+                <p class="section-subtitle">Desarrollador apasionado por la automatización y la optimización de procesos</p>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="about-paragraph">
+                        Soy un <strong>Analista Funcional de Sistemas Informáticos</strong> especializado en el análisis, diseño y optimización de procesos empresariales. Mi experiencia se centra en crear soluciones web utilizando <strong>HTML5, CSS3 y JavaScript</strong>, y actualmente me estoy especializando en <strong>automatizaciones con n8n</strong>, una herramienta poderosa que me permite diseñar flujos de trabajo automatizados que transforman la eficiencia operacional.
+                    </p>
+                    <p class="about-paragraph">
+                        Mi formación continua incluye certificaciones en <strong>Lógica de Programación con JavaScript</strong>, <strong>Git y GitHub</strong>, y <strong>tecnologías de Inteligencia Artificial</strong> para optimización de procesos. Como analista funcional, mi objetivo es identificar oportunidades de mejora en los sistemas existentes y proponer soluciones automatizadas que generen valor real para las organizaciones.
+                    </p>
+                    
+                    <div class="skills-highlights">
+                        <div class="skill-item">
+                            <i class="fas fa-code"></i>
+                            <span>Frontend Development</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Automatización n8n</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-git-alt"></i>
+                            <span>Control de Versiones</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-brain"></i>
+                            <span>LLM, MCP & IA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card">
+                    <div class="vision-card">
+                        <div class="card-header">
+                            <i class="fas fa-lightbulb"></i>
+                            <h3>Mi Visión</h3>
+                        </div>
+                        <p>
+                            "La automatización no reemplaza el trabajo humano, lo potencia. Mi misión es crear 
+                            soluciones que liberen tiempo valioso para que las personas se enfoquen en lo que 
+                            realmente importa: la creatividad y la innovación."
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
-    </header> 
+    </section>
 
-    <main>
-        <section id="about" class="container">
-            <h2 data-translate="aboutTitle"></h2>
-            <p data-translate="aboutText"></p>
-        </section>
+    <!-- Skills Section -->
+    <section id="habilidades" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle">Tecnologías y herramientas que domino para crear soluciones web y automatizaciones</p>
+            </div>
 
-        <section id="portfolio" class="container">
-            <h2 data-translate="portfolioTitle"></h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Análisis de Sistemas</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Análisis Funcional</span>
+                        <span class="skill-tag">Diseño de Procesos</span>
+                        <span class="skill-tag">HTML5</span>
+                        <span class="skill-tag">CSS3</span>
+                        <span class="skill-tag">JavaScript</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-robot"></i>
+                        <h3>IA & Automatización</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">n8n</span>
+                        <span class="skill-tag">Inteligencia Artificial</span>
+                        <span class="skill-tag">Workflow Automation</span>
+                        <span class="skill-tag">Process Optimization</span>
+                        <span class="skill-tag">Agent IA Integration</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-tools"></i>
+                        <h3>Herramientas</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">AWS Basics</span>
+                        <span class="skill-tag">LLM</span>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="category-header">
+                        <i class="fas fa-brain"></i>
+                        <h3>Conocimientos</h3>
+                    </div>
+                    <div class="skills-list">
+                        <span class="skill-tag">Lógica de Programación</span>
+                        <span class="skill-tag">Redes</span>
+                        <span class="skill-tag">Cloud Computing</span>
+                        <span class="skill-tag">Marketing Digital</span>
+                        <span class="skill-tag">Productividad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <p class="section-subtitle">Una selección de mis trabajos más recientes en desarrollo web</p>
+            </div>
+
             <div class="projects-grid">
-                <div class="project">
-                    <img src="Img/Bartenderencasa.png" alt="Bartender En Casa">
-                    <h3 data-translate="project0Title"></h3>
-                    <p data-translate="project0Description"></p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Img/Bartenderencasa.png" alt="Bartender En Casa">
+                        <div class="project-overlay">
+                            <a href="https://brianruizmoreno.github.io/BartenderEnCasa/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
-                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/BartenderEnCasa/', '_blank')"></button>
-                </div>
-                <div class="project">
-                    <img src="Img/Cattleya.png" alt="SALON DE EVENTOS">
-                    <h3 data-translate="project1Title"></h3>
-                    <p data-translate="project1Description"></p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
+                    <div class="project-content">
+                        <h3 class="project-title">Bartender En Casa</h3>
+                        <p class="project-description">
+                            Aplicación web interactiva para crear cócteles y bebidas desde casa con recetas personalizadas y guías paso a paso.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
-                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/Cattleya/', '_blank')"></button>
                 </div>
-                <div class="project">
-                    <img src="Img/English Pro.png" alt="SERVICIOS DE CLASES DE INGLES">
-                    <h3 data-translate="project2Title"></h3>
-                    <p data-translate="project2Description"></p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/English-Pro/', '_blank')"></button>
-                </div>
-                <div class="project">
-                    <img src="Img/FlaRo.png" alt="TIENDA DE ROPA DEPORTIVA">
-                    <h3 data-translate="project3Title"></h3>
-                    <p data-translate="project3Description"></p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/FlaRo/', '_blank')"></button>
-                </div>
-                <div class="project">
-                    <img src="Img/Trivia.png" alt="TRIVIA">
-                    <h3 data-translate="project4Title"></h3>
-                    <p data-translate="project4Description"></p>
-                    <div class="tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                    </div>
-                    <button data-translate="verPage" class="button" onclick="window.open('https://brianruizmoreno.github.io/Trivia/', '_blank')"></button>
-                </div>
-            </div>
-        </section>
 
-        <section id="certificates" class="container">
-            <h2 data-translate="certificatesTitle"></h2>
-            <button id="toggle-certificates" class="btn btn-theme" data-translate="showCertificates"></button>
-            <div id="certificates-content" class="hidden">
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Figma.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate1Title"></h3>
-                        <p data-translate="certificate1Text"></p> <br>
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Img/Cattleya.png" alt="Cattleya Salón de Eventos">
+                        <div class="project-overlay">
+                            <a href="https://brianruizmoreno.github.io/Cattleya/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Cattleya - Salón de Eventos</h3>
+                        <p class="project-description">
+                            Sitio web elegante para salón de eventos con galería interactiva, información de servicios y sistema de contacto.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Introduccion ciencia de datos.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate2Title"></h3>
-                        <p data-translate="certificate2Text"></p> <br>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Img/English Pro.png" alt="English Pro">
+                        <div class="project-overlay">
+                            <a href="https://brianruizmoreno.github.io/English-Pro/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">English Pro</h3>
+                        <p class="project-description">
+                            Plataforma educativa para servicios de clases de inglés con información de cursos y métodos de contacto.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/AWS CPE.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate3Title"></h3>
-                        <p data-translate="certificate3Text"></p> <br>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Img/FlaRo.png" alt="FlaRo Tienda Deportiva">
+                        <div class="project-overlay">
+                            <a href="https://brianruizmoreno.github.io/FlaRo/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">FlaRo - Tienda Deportiva</h3>
+                        <p class="project-description">
+                            E-commerce moderno para tienda de ropa deportiva con catálogo de productos y diseño responsive.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/CIITI.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate4Title"></h3>
-                        <p data-translate="certificate4Text"></p><br>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="Img/Trivia.png" alt="Trivia Interactiva">
+                        <div class="project-overlay">
+                            <a href="https://brianruizmoreno.github.io/Trivia/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Coaching.png" data-translate="viewCertificate"></button>
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate5Title"></h3>
-                        <p data-translate="certificate5Text"></p><br>
-                    </div>
-                </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/HTML.png" data-translate="viewCertificate"></button>
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate6Title"></h3>
-                        <p data-translate="certificate6Text"></p><br>
-                    </div>
-                </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Redes.png" data-translate="viewCertificate"></button>                  
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate7Title"></h3>
-                        <p data-translate="certificate7Text"></p><br>
-                    </div>
-                </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Marketing.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate8Title"></h3>
-                        <p data-translate="certificate8Text"></p> <br>
-                    </div>
-                </div>
-                <div class="certificate">
-                    <button class="buttonc" data-image="Img/Yo puedo programar.png" data-translate="viewCertificate"></button>          
-                    <div class="certificate-info">
-                        <h3 data-translate="certificate9Title"></h3>
-                        <p data-translate="certificate9Text"></p> <br>
+                    <div class="project-content">
+                        <h3 class="project-title">Trivia Interactiva</h3>
+                        <p class="project-description">
+                            Juego de trivia dinámico con múltiples categorías, sistema de puntuación y interfaz interactiva.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-   
-    <footer>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificaciones" class="certificates">
         <div class="container">
-            <p data-translate="footer">&copy; <span id="current-year"></span></p>
+            <div class="section-header">
+                <h2 class="section-title">Certificaciones</h2>
+                <p class="section-subtitle">Formación continua y certificaciones que respaldan mi expertise técnico</p>
+            </div>
+
+            <div class="certificates-grid">
+                <!-- Oracle/Alura Certificates -->
+                <div class="certificate-card featured">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Enero 2025</div>
+                    </div>
+                    <h3 class="certificate-title">Principiante en Programación G8 - ONE</h3>
+                    <p class="certificate-institution">Oracle Next Education</p>
+                    <p class="certificate-description">Formación completa de 70 horas en 9 cursos de programación fundamental.</p>
+                    <div class="certificate-hours">70 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Enero 2025</div>
+                    </div>
+                    <h3 class="certificate-title">Lógica de Programación con JavaScript</h3>
+                    <p class="certificate-institution">Oracle Next Education</p>
+                    <p class="certificate-description">Formación de 24 horas en 3 cursos especializados en JavaScript.</p>
+                    <div class="certificate-hours">24 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Abril 2025</div>
+                    </div>
+                    <h3 class="certificate-title">JavaScript</h3>
+                    <p class="certificate-institution">Coderhouse</p>
+                    <p class="certificate-description">Curso intensivo de JavaScript de 20 horas dictadas a lo largo de 10 semanas, cumpliendo todos los requisitos académicos exigidos.</p>
+                    <div class="certificate-hours">20 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Enero 2025</div>
+                    </div>
+                    <h3 class="certificate-title">ChatGPT: Optimizando la Calidad de los Resultados</h3>
+                    <p class="certificate-institution">Oracle Next Education</p>
+                    <p class="certificate-description">Curso especializado en optimización de prompts y uso eficiente de IA.</p>
+                    <div class="certificate-hours">8 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Enero 2025</div>
+                    </div>
+                    <h3 class="certificate-title">HTML y CSS: Responsividad y Publicación</h3>
+                    <p class="certificate-institution">Oracle Next Education</p>
+                    <p class="certificate-description">Desarrollo web responsive y técnicas de publicación de proyectos.</p>
+                    <div class="certificate-hours">6 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Enero 2025</div>
+                    </div>
+                    <h3 class="certificate-title">Git y GitHub: Repositorio, Commit y Versiones</h3>
+                    <p class="certificate-institution">Oracle Next Education</p>
+                    <p class="certificate-description">Control de versiones y colaboración en proyectos de desarrollo.</p>
+                    <div class="certificate-hours">6 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Oct 2024</div>
+                    </div>
+                    <h3 class="certificate-title">Introducción a la Ciencia de Datos</h3>
+                    <p class="certificate-institution">Certificación Profesional</p>
+                    <p class="certificate-description">Curso de 6 horas en 2 módulos con autoevaluación. Número de serie: OA-2024-1005000593663</p>
+                    <div class="certificate-hours">6 horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Oct 2024</div>
+                    </div>
+                    <h3 class="certificate-title">AWS Cloud Practitioner Essentials</h3>
+                    <p class="certificate-institution">Amazon Web Services</p>
+                    <p class="certificate-description">Fundamentos de computación en la nube y servicios AWS.</p>
+                    <div class="certificate-hours">10+ horas</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">Mayo 2024</div>
+                    </div>
+                    <h3 class="certificate-title">Instalación de Redes</h3>
+                    <p class="certificate-institution">Instituto Nacional de Desarrollo Académico (INDA)</p>
+                    <p class="certificate-description">Curso de instalación y configuración de redes. Promedio: 8/10</p>
+                    <div class="certificate-hours">2 meses</div>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-header">
+                        <i class="fas fa-award"></i>
+                        <div class="certificate-date">2024</div>
+                    </div>
+                    <h3 class="certificate-title">Figma</h3>
+                    <p class="certificate-institution">Certificación Profesional</p>
+                    <p class="certificate-description">Diseño de interfaces y prototipado para desarrollo web.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contacto</h2>
+                <p class="section-subtitle">¿Tienes un proyecto en mente? ¡Hablemos sobre automatizaciones y desarrollo web!</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <h3>¡Trabajemos juntos!</h3>
+                        <p>
+                            Soy un Analista Funcional especializado en optimizar sistemas informáticos y automatizar procesos con n8n. Si necesitas analizar y mejorar tus procesos empresariales o implementar soluciones automatizadas, me encantaría colaborar contigo.
+                        </p>
+
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <i class="fas fa-phone"></i>
+                                <span>WhatsApp: +54 341 722 1914</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fab fa-linkedin"></i>
+                                <span>LinkedIn: brian-ruiz-moreno</span>
+                            </div>
+                            <div class="contact-method">
+                                <i class="fab fa-instagram"></i>
+                                <span>Instagram: @brian.ruizmoreno</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-specialties">
+                    <h4>Especialidades</h4>
+                    <div class="specialties-grid">
+                        <div class="specialty-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Análisis Funcional</span>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-robot"></i>
+                            <span>Automatización n8n</span>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-cogs"></i>
+                            <span>Optimización de Procesos</span>
+                        </div>
+                        <div class="specialty-item">
+                            <i class="fas fa-brain"></i>
+                            <span>Integración IA</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-buttons">
+                        <a href="https://wa.me/+543417221914" target="_blank" class="btn btn-primary">
+                            <i class="fab fa-whatsapp"></i>
+                            Contactar por WhatsApp
+                        </a>
+                        <a href="https://www.linkedin.com/in/brian-ruiz-moreno-b370a71b9/" target="_blank" class="btn btn-secondary">
+                            <i class="fab fa-linkedin"></i>
+                            Conectar en LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/brian-ruiz-moreno-b370a71b9/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://www.instagram.com/brian.ruizmoreno/" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/brian.ruizmoreno/" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/+543417221914" target="_blank" class="social-link">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+                <p class="footer-text">
+                    &copy; <span id="year"></span> Brian Ruiz Moreno. Todos los derechos reservados.
+                </p>
+                <script>
+						document.getElementById("year").textContent = new Date().getFullYear();
+					</script>
+                <p class="footer-subtitle">
+                    Desarrollado con ❤️ por <a href="https://brianruizmoreno.github.io/Portfolio/"> Brian Ruiz Moreno</a> 
+                </p>
+            </div>
         </div>
     </footer>
 
-    <!-- Lightbox para el video -->
-    <div class="lightbox" id="video-lightbox">
-        <div class="lightbox-content">
-            <span class="close">&times;</span>
-            <iframe id="video" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
-        </div>
-    </div>
-    <!-- Lightbox para la imagen -->
-    <div class="lightbox" id="image-lightbox">
-        <div class="lightbox-content">
-            <span class="close">&times;</span>
-            <div id="image-container"></div>
-        </div>
-    </div>
-
-    <!-- Loader -->
-    <div class="loader" id="loader">
-        <div>
-            <ul>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-                <li>
-                    <svg fill="currentColor" viewBox="0 0 90 120">
-                        <path d="M90,0 L90,120 L11,120 C4.92486775,120 0,115.075132 0,109 L0,11 C0,4.92486775 4.92486775,0 11,0 L90,0 Z M71.5,81 L18.5,81 C17.1192881,81 16,82.1192881 16,83.5 C16,84.8254834 17.0315359,85.9100387 18.3356243,85.9946823 L18.5,86 L71.5,86 C72.8807119,86 74,84.8807119 74,83.5 C74,82.1745166 72.9684641,81.0899613 71.6643757,81.0053177 L71.5,81 Z M71.5,57 L18.5,57 C17.1192881,57 16,58.1192881 16,59.5 C16,60.8254834 17.0315359,61.9100387 18.3356243,61.9946823 L18.5,62 L71.5,62 C72.8807119,62 74,60.8807119 74,59.5 C74,58.1192881 72.8807119,57 71.5,57 Z M71.5,33 L18.5,33 C17.1192881,33 16,34.1192881 16,35.5 C16,36.8254834 17.0315359,37.9100387 18.3356243,37.9946823 L18.5,38 L71.5,38 C72.8807119,38 74,36.8807119 74,35.5 C74,34.1192881 72.8807119,33 71.5,33 Z"></path>
-                    </svg>
-                </li>
-            </ul>
-        </div>
-        <span data-translate="loading">Cargando...</span>
-    </div>
-
     <script src="script.js"></script>
-    <script src="translation.js"></script>
-
 </body>
 </html>
